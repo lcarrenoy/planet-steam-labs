@@ -1,0 +1,1442 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="canonical" href="https://lcarrenoy.github.io/planet-steam-labs/">
+<meta name="theme-color" content="#0E1526">
+<meta property="og:title" content="Planet STEAM Labs">
+<meta property="og:description" content="Software, datos e inteligencia artificial aplicados a procesos de negocio.">
+<meta property="og:url" content="https://lcarrenoy.github.io/planet-steam-labs/">
+<meta property="og:type" content="website">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planet STEAM Labs — Implementación de IA para empresas</title>
+<meta name="description" content="Planet STEAM Labs: software, inteligencia artificial, automatización, ingeniería de datos y arquitectura tecnológica para empresas. 20 Quick Solutions y 30 Business Solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+/* Planet STEAM Labs — estilos
+   Base + utilidades generadas desde el diseño original (s001…). */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#F5F5F1}
+a{color:#2448C9}a:not([class]):hover{color:#16308F}
+:focus-visible{outline:3px solid #8FA6FF;outline-offset:2px}
+[hidden]{display:none!important}
+
+/* Buscador y filtros del catálogo */
+.catalog-tools,.catalog-tools *{box-sizing:border-box}
+.catalog-tools{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:flex-end;margin-top:56px;padding:20px 22px;background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;position:sticky;top:12px;z-index:5}
+.catalog-field{display:grid;gap:6px;font-size:13px;font-weight:600;color:#3D414B;flex:0 1 220px;min-width:0}
+.catalog-field--grow{flex:1 1 280px}
+.catalog-field input,.catalog-field select{font:inherit;font-size:15px;font-weight:400;color:#14161B;padding:10px 12px;border:1px solid #CFCFC7;border-radius:10px;background:#FFFFFF;width:100%}
+.catalog-reset{font:inherit;font-size:15px;font-weight:600;color:#2448C9;background:transparent;border:1.5px solid #2448C9;border-radius:999px;padding:9px 18px;cursor:pointer}
+.catalog-reset:hover{background:#2448C9;color:#FFFFFF}
+.catalog-count{flex:1 0 100%;margin:0;font-size:14px;color:#5A5F6B}
+.catalog-empty{flex:1 0 100%;margin:0;font-size:15px;color:#14161B}
+@media (max-width:640px){.catalog-tools{position:static}.catalog-field{flex:1 1 100%}}
+.is-highlight{box-shadow:0 0 0 3px #8FA6FF}
+
+/* Utilidades del diseño original */
+.s001{background: #F5F5F1; color: #14161B; font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; line-height: 1.55}
+.s002{background: #0E1526; color: #F5F5F1}
+.s003{max-width: 1200px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between}
+.s004{display: inline-flex; gap: 10px; align-items: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF; text-decoration: none}
+.s005{display: flex; flex-wrap: wrap; gap: 24px; align-items: center; font-size: 15px; font-weight: 500}
+.s006{color: #DCE3FF; text-decoration: none}
+.s007{color: #0E1526; background: #FFFFFF; padding: 10px 18px; border-radius: 999px; text-decoration: none; font-weight: 600}
+.s008{max-width: 1200px; margin: 0 auto; padding: 88px 24px 96px}
+.s009{margin: 0 0 20px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #8FA6FF}
+.s010{margin: 0; max-width: 900px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 64px; line-height: 1.05; letter-spacing: -0.02em}
+.s011{margin: 28px 0 0; max-width: 680px; font-size: 20px; color: #C3C9DA}
+.s012{display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px}
+.s013{background: #2448C9; color: #FFFFFF; padding: 15px 26px; border-radius: 999px; font-weight: 600; text-decoration: none}
+.s014{border: 1.5px solid #8FA6FF; color: #FFFFFF; padding: 14px 26px; border-radius: 999px; font-weight: 600; text-decoration: none}
+.s015{display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 72px; padding-top: 32px; border-top: 1px solid #26304A}
+.s016{font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700}
+.s017{color: #9AA3BA; font-size: 15px}
+.s018{max-width: 1200px; margin: 0 auto; padding: 96px 24px}
+.s019{margin: 0 0 16px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #2448C9}
+.s020{margin: 0; max-width: 860px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.1; letter-spacing: -0.01em}
+.s021{margin: 20px 0 0; max-width: 760px; color: #3D414B}
+.s022{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; margin-top: 40px}
+.s023{display: flex; flex-direction: column; gap: 6px; background: #FFFFFF; border: 1px solid #E2E2DC; border-radius: 16px; padding: 20px 22px; text-decoration: none; color: #14161B}
+.s024{font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2448C9}
+.s025{font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px}
+.s026{font-size: 14px; color: #3D414B}
+.s027{margin-top: 88px; padding-top: 48px; border-top: 1px solid #E2E2DC}
+.s028{margin: 0; max-width: 820px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 36px; line-height: 1.15}
+.s029{margin: 16px 0 0; max-width: 720px; color: #3D414B}
+.s030{display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0}
+.s031{font-size: 14px; font-weight: 500; color: #14161B; text-decoration: none; border: 1px solid #CFCFC7; background: #FFFFFF; border-radius: 999px; padding: 6px 14px}
+.s032{margin-top: 48px}
+.s033{margin: 0 0 20px; font-family: 'Sora', sans-serif; font-size: 22px}
+.s034{font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; color: #5A5F6B}
+.s035{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px}
+.s036{background: #FFFFFF; border: 1px solid #E2E2DC; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px}
+.s037{display: flex; flex-wrap: wrap; gap: 4px 12px; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px}
+.s038{color: #2448C9}
+.s039{color: #5A5F6B}
+.s040{margin: 0; font-family: 'Sora', sans-serif; font-size: 19px; line-height: 1.25}
+.s041{margin: 0; color: #3D414B; font-size: 15px}
+.s042{cursor: pointer; font-size: 14px; font-weight: 600; color: #2448C9}
+.s043{margin: 6px 0 0; padding-left: 20px; color: #3D414B; font-size: 14px}
+.s044{margin-top: auto; align-self: flex-start; font-weight: 600; font-size: 15px; text-decoration: none; border-bottom: 2px solid #2448C9; padding: 6px 0}
+.s045{background: #EBEBE4}
+.s046{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; margin-top: 32px}
+.s047{background: #FFFFFF; border: 1px solid #E2E2DC; border-radius: 16px; padding: 20px 22px}
+.s048{font-size: 12px; font-weight: 600; color: #1E5B34; background: #DDF2E3; padding: 3px 10px; border-radius: 999px}
+.s049{margin: 10px 0 0; font-size: 15px; color: #3D414B}
+.s050{font-size: 12px; font-weight: 600; color: #233F9E; background: #E2E8FB; padding: 3px 10px; border-radius: 999px}
+.s051{font-size: 12px; font-weight: 600; color: #8A4B12; background: #FCEFD9; padding: 3px 10px; border-radius: 999px}
+.s052{margin: 16px 0 0; max-width: 880px; color: #5A5F6B; font-size: 14px}
+.s053{margin: 0; color: #14161B; font-size: 15px; font-weight: 500}
+.s054{color: #14161B}
+.s055{display: flex; flex-wrap: wrap; gap: 6px}
+.s056{display: grid; gap: 10px; margin-top: 10px; font-size: 14px; color: #3D414B}
+.s057{background: #14161B; color: #F5F5F1}
+.s058{max-width: 1200px; margin: 0 auto; padding: 88px 24px}
+.s059{margin: 0 0 16px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #8FA6FF}
+.s060{margin: 0; max-width: 820px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1}
+.s061{margin: 20px 0 0; max-width: 760px; color: #C3C7D1}
+.s062{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; margin-top: 40px}
+.s063{background: #1F2229; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px}
+.s064{font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8FA6FF}
+.s065{margin: 0; font-family: 'Sora', sans-serif; font-size: 20px}
+.s066{margin: 0; color: #C3C7D1; font-size: 15px}
+.s067{margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; align-items: center}
+.s068{font-size: 13px; color: #C3C7D1; margin-right: 4px}
+.s069{font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8FA6FF; border: 1px solid #343842; border-radius: 999px; padding: 2px 9px; text-decoration: none}
+.s070{margin: 0; font-size: 13px; color: #8FA6FF}
+.s071{display: inline-block; margin-top: 40px; background: #2448C9; color: #FFFFFF; padding: 15px 26px; border-radius: 999px; font-weight: 600; text-decoration: none}
+.s072{margin: 0; max-width: 820px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.1; letter-spacing: -0.01em}
+.s073{margin: 20px 0 0; max-width: 720px; color: #3D414B; font-size: 19px}
+.s074{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px; margin-top: 48px}
+.s075{background: #FFFFFF; border: 1px solid #E2E2DC; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px}
+.s076{display: flex; align-items: center; justify-content: space-between}
+.s077{width: 56px; height: 56px; border-radius: 14px; background: #E2E8FB; display: flex; align-items: center; justify-content: center}
+.s078{font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A5F6B}
+.s079{margin: 0; font-family: 'Sora', sans-serif; font-size: 22px}
+.s080{list-style: none; margin: auto 0 0; padding: 4px 0 0; display: flex; flex-wrap: wrap; gap: 8px}
+.s081{font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #3D414B; border: 1px solid #E2E2DC; border-radius: 999px; padding: 4px 12px}
+.s082{margin: 32px 0 0; max-width: 880px; color: #5A5F6B; font-size: 14px}
+.s083{max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center}
+.s084{flex: 1 1 440px; min-width: 0}
+.s085{margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.1; letter-spacing: -0.01em}
+.s086{margin: 20px 0 0; color: #C3C7D1; font-size: 18px}
+.s087{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 32px}
+.s088{background: #1F2229; border-radius: 14px; padding: 18px}
+.s089{font-family: 'Sora', sans-serif; font-weight: 600}
+.s090{color: #C3C7D1; font-size: 14px}
+.s091{background: #2448C9; border-radius: 14px; padding: 18px}
+.s092{color: #E8ECFF; font-size: 14px}
+.s093{display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 32px}
+.s094{background: #F5F5F1; color: #14161B; padding: 14px 24px; border-radius: 999px; font-weight: 600; text-decoration: none}
+.s095{font-size: 13px; font-weight: 600; color: #FFD9A8; border: 1px solid #6B5233; padding: 6px 12px; border-radius: 999px}
+.s096{flex: 1 1 420px; min-width: 0; position: relative; height: 520px}
+.s097{position: absolute; left: 0; top: 40px; width: 82%; height: 340px; background: #F5F5F1; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.4)}
+.s098{display: flex; gap: 6px; align-items: center; padding: 10px 12px; background: #E3E3DC}
+.s099{width: 9px; height: 9px; border-radius: 50%; background: #C7C7BF}
+.s100{margin-left: 10px; flex: 1; height: 14px; border-radius: 7px; background: #FFFFFF; font-size: 9px; color: #5A5F6B; padding-left: 8px; line-height: 14px}
+.s101{display: flex; height: 100%}
+.s102{width: 70px; background: #14161B; padding: 14px 10px; display: flex; flex-direction: column; gap: 10px}
+.s103{height: 8px; border-radius: 4px; background: #2448C9}
+.s104{height: 8px; border-radius: 4px; background: #3A3E48}
+.s105{flex: 1; padding: 16px; color: #14161B}
+.s106{font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px}
+.s107{display: flex; gap: 10px; margin-top: 12px}
+.s108{flex: 1; background: #FFFFFF; border-radius: 8px; padding: 10px}
+.s109{font-size: 9px; color: #5A5F6B}
+.s110{font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px; color: #2448C9}
+.s111{font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px}
+.s112{display: flex; gap: 8px; align-items: flex-end; height: 110px; margin-top: 16px}
+.s113{flex: 1; height: 40%; background: #C9D3F5; border-radius: 4px 4px 0 0}
+.s114{flex: 1; height: 55%; background: #C9D3F5; border-radius: 4px 4px 0 0}
+.s115{flex: 1; height: 70%; background: #8FA6FF; border-radius: 4px 4px 0 0}
+.s116{flex: 1; height: 85%; background: #2448C9; border-radius: 4px 4px 0 0}
+.s117{position: absolute; right: 0; top: 0; width: 230px; height: 470px; background: #FFFFFF; border: 10px solid #0A0B0E; border-radius: 38px; box-shadow: 0 24px 60px rgba(0,0,0,0.5); overflow: hidden; color: #14161B}
+.s118{display: flex; justify-content: center; padding-top: 8px}
+.s119{width: 10px; height: 10px; border-radius: 50%; background: #0A0B0E}
+.s120{padding: 14px 16px}
+.s121{display: flex; align-items: center; gap: 6px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px}
+.s122{margin-top: 16px; font-size: 10px; color: #5A5F6B}
+.s123{font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.2}
+.s124{margin-top: 12px; height: 8px; border-radius: 4px; background: #E6E9F5}
+.s125{width: 68%; height: 100%; border-radius: 4px; background: #2448C9}
+.s126{margin-top: 4px; font-size: 10px; color: #5A5F6B}
+.s127{margin-top: 16px; font-size: 11px; font-weight: 600}
+.s128{margin-top: 8px; display: flex; justify-content: space-between; font-size: 10px; padding: 8px; background: #F5F5F1; border-radius: 8px}
+.s129{margin-top: 6px; display: flex; justify-content: space-between; font-size: 10px; padding: 8px; background: #F5F5F1; border-radius: 8px}
+.s130{margin-top: 18px; text-align: center; background: #2448C9; color: #FFFFFF; font-size: 11px; font-weight: 600; padding: 10px; border-radius: 999px}
+.s131{list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px}
+.s132{background: #FFFFFF; border-radius: 16px; padding: 28px; border-top: 4px solid #2448C9}
+.s133{margin: 10px 0 8px; font-family: 'Sora', sans-serif; font-size: 21px}
+.s134{display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 48px}
+.s135{background: #FFFFFF; border: 1px solid #E2E2DC; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 14px}
+.s136{font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 700}
+.s137{margin: 0; padding-left: 20px; color: #3D414B; font-size: 15px}
+.s138{margin-top: auto; text-align: center; border: 1.5px solid #14161B; color: #14161B; padding: 13px 20px; border-radius: 999px; font-weight: 600; text-decoration: none}
+.s139{background: #0E1526; color: #F5F5F1; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 14px}
+.s140{align-self: flex-start; font-size: 12px; font-weight: 600; color: #0E1526; background: #8FA6FF; padding: 4px 10px; border-radius: 999px}
+.s141{margin: 0; padding-left: 20px; color: #C3C9DA; font-size: 15px}
+.s142{margin-top: auto; text-align: center; background: #2448C9; color: #FFFFFF; padding: 14px 20px; border-radius: 999px; font-weight: 600; text-decoration: none}
+.s143{background: #FFFFFF; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 12px}
+.s144{margin: -32px -32px 8px; border-radius: 16px 16px 0 0; background: #E9E1D2; padding: 20px 20px 0; height: 200px; box-sizing: border-box; overflow: hidden}
+.s145{background: #FFFDF8; border-radius: 10px 10px 0 0; height: 100%; box-shadow: 0 8px 24px rgba(60,40,10,0.15); overflow: hidden}
+.s146{display: flex; gap: 6px; align-items: center; padding: 8px 10px; background: #F1EBDF}
+.s147{width: 8px; height: 8px; border-radius: 50%; background: #D9C9AE}
+.s148{margin-left: 8px; flex: 1; height: 12px; border-radius: 6px; background: #FFFDF8}
+.s149{display: flex; justify-content: space-between; align-items: center; padding: 10px 14px}
+.s150{font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 700; color: #4A3B22}
+.s151{background: #4E6B3A; color: #FFFFFF; font-size: 9px; padding: 3px 8px; border-radius: 999px}
+.s152{display: flex; gap: 8px; padding: 0 14px}
+.s153{flex: 1}
+.s154{height: 70px; border-radius: 6px; background: #C9A46A}
+.s155{height: 6px; width: 70%; margin-top: 6px; border-radius: 3px; background: #D9CCB4}
+.s156{height: 70px; border-radius: 6px; background: #7E9A5F}
+.s157{height: 6px; width: 60%; margin-top: 6px; border-radius: 3px; background: #D9CCB4}
+.s158{height: 70px; border-radius: 6px; background: #A86B3C}
+.s159{height: 6px; width: 75%; margin-top: 6px; border-radius: 3px; background: #D9CCB4}
+.s160{display: flex; flex-wrap: wrap; gap: 16px; margin-top: auto; padding-top: 8px; font-size: 15px; font-weight: 600}
+.s161{margin: -32px -32px 8px; border-radius: 16px 16px 0 0; background: #1B2233; padding: 20px 20px 0; height: 200px; box-sizing: border-box; overflow: hidden}
+.s162{background: #0F1420; border: 1px solid #2C3550; border-bottom: none; border-radius: 10px 10px 0 0; height: 100%; overflow: hidden}
+.s163{display: flex; gap: 6px; align-items: center; padding: 8px 10px; background: #161C2B}
+.s164{width: 8px; height: 8px; border-radius: 50%; background: #3A4460}
+.s165{margin-left: 8px; flex: 1; height: 12px; border-radius: 6px; background: #0F1420}
+.s166{display: flex; gap: 8px; padding: 12px 12px 8px}
+.s167{flex: 1; background: #182033; border-radius: 6px; padding: 8px}
+.s168{font-size: 8px; color: #8A94B0}
+.s169{font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF}
+.s170{flex: 1; background: #3A1D24; border-radius: 6px; padding: 8px}
+.s171{font-size: 8px; color: #F2A7B0}
+.s172{font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; color: #FF8A98}
+.s173{display: flex; gap: 6px; align-items: flex-end; height: 60px; padding: 0 12px}
+.s174{flex: 1; height: 40%; background: #3B5BDB; border-radius: 3px 3px 0 0}
+.s175{flex: 1; height: 65%; background: #3B5BDB; border-radius: 3px 3px 0 0}
+.s176{flex: 1; height: 50%; background: #3B5BDB; border-radius: 3px 3px 0 0}
+.s177{flex: 1; height: 90%; background: #FF6B7D; border-radius: 3px 3px 0 0}
+.s178{flex: 1; height: 55%; background: #3B5BDB; border-radius: 3px 3px 0 0}
+.s179{flex: 1; height: 70%; background: #3B5BDB; border-radius: 3px 3px 0 0}
+.s180{margin: -32px -32px 8px; border-radius: 16px 16px 0 0; background: #E4F5EE; height: 200px; box-sizing: border-box; overflow: hidden; display: flex; justify-content: center; padding-top: 20px}
+.s181{width: 140px; background: #FFFFFF; border: 4px solid #14161B; border-bottom: none; border-radius: 22px 22px 0 0; padding: 14px 10px 0; box-sizing: border-box}
+.s182{font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; color: #14161B}
+.s183{font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 700; color: #6A3DE8; margin-top: 2px}
+.s184{display: flex; justify-content: space-between; margin-top: 10px; font-size: 8px; color: #3D414B; border-bottom: 1px solid #EEE; padding-bottom: 4px}
+.s185{display: flex; justify-content: space-between; margin-top: 4px; font-size: 8px; color: #3D414B; border-bottom: 1px solid #EEE; padding-bottom: 4px}
+.s186{display: flex; justify-content: space-between; margin-top: 4px; font-size: 8px; color: #3D414B; padding-bottom: 4px}
+.s187{display: flex; justify-content: center; margin-top: 8px}
+.s188{width: 36px; height: 36px; border-radius: 50%; background: #14F195; display: flex; align-items: center; justify-content: center}
+.s189{display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; align-items: center}
+.s190{font-size: 14px; color: #5A5F6B; margin-right: 6px}
+.s191{font-family: 'IBM Plex Mono', monospace; font-size: 13px; background: #FFFFFF; border: 1px solid #D6D6CE; padding: 6px 12px; border-radius: 999px}
+.s192{margin: 20px 0 0; max-width: 720px; color: #3D414B; font-size: 18px}
+.s193{background: #FFFFFF; border: 1px solid #E2E2DC; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px}
+.s194{width: 88px; height: 88px; border-radius: 50%; background: #DCE3FF; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; color: #2448C9}
+.s195{font-family: 'Sora', sans-serif; font-weight: 600; font-size: 20px}
+.s196{color: #2448C9; font-size: 15px; font-weight: 600}
+.s197{margin-top: auto; font-weight: 600; font-size: 15px}
+.s198{width: 88px; height: 88px; border-radius: 50%; background: #E2F0E6; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; color: #1E5B34}
+.s199{color: #1E5B34; font-size: 15px; font-weight: 600}
+.s200{width: 88px; height: 88px; border-radius: 50%; background: #FBE3D4; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; color: #6B2A08}
+.s201{color: #6B2A08; font-size: 15px; font-weight: 600}
+.s202{max-width: 1200px; margin: 0 auto; padding: 96px 24px 64px}
+.s203{display: flex; flex-wrap: wrap; gap: 48px}
+.s204{flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px}
+.s205{margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 52px; line-height: 1.05; letter-spacing: -0.02em}
+.s206{margin: 8px 0 20px; color: #C3C9DA; font-size: 18px}
+.s207{background: #2448C9; color: #FFFFFF; padding: 16px 24px; border-radius: 999px; font-weight: 600; text-decoration: none; text-align: center}
+.s208{border: 1.5px solid #8FA6FF; color: #FFFFFF; padding: 15px 24px; border-radius: 999px; font-weight: 600; text-decoration: none; text-align: center}
+.s209{margin: 0; text-align: center; font-size: 14px; color: #9AA3BA}
+.s210{display: flex; gap: 12px}
+.s211{flex: 1; border: 1.5px solid #3A4460; color: #FFFFFF; padding: 15px 16px; border-radius: 999px; font-weight: 600; text-decoration: none; text-align: center}
+.s212{flex: 1 1 420px; min-width: 0; background: #FFFFFF; color: #14161B; border-radius: 16px; padding: 28px; display: grid; gap: 14px; align-content: start}
+.s213{display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px}
+.s214{display: grid; gap: 6px; font-size: 14px; font-weight: 600}
+.s215{font: inherit; font-weight: 400; padding: 12px; border: 1px solid #CFCFC7; border-radius: 10px}
+.s216{font: inherit; font-weight: 400; padding: 12px; border: 1px solid #CFCFC7; border-radius: 10px; resize: vertical}
+.s217{font: inherit; font-weight: 600; background: #2448C9; color: #FFFFFF; border: none; padding: 15px 20px; border-radius: 999px; cursor: pointer}
+.s218{display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; margin-top: 80px; padding-top: 24px; border-top: 1px solid #26304A; font-size: 14px; color: #9AA3BA}
+.s219{display: flex; flex-wrap: wrap; gap: 20px}
+.s220{color: #C3C9DA}
+
+/* Ajustes de publicación: identidad conservada, móvil y estados accesibles. */
+*,*::before,*::after{box-sizing:border-box}
+body{overflow-wrap:break-word}
+img,svg{max-width:100%}
+::selection{background:#C8D4FF;color:#0E1526}
+a{ text-underline-offset: .2em; }
+section[id],div[id]{scroll-margin-top:24px}
+.skip-link{position:fixed;top:12px;left:12px;transform:translateY(-180%);z-index:99;padding:12px 18px;background:white;color:#2448C9;border-radius:8px}
+.skip-link:focus{transform:none}
+.s010{font-size:clamp(2.4rem,6vw,4rem);text-wrap:balance}
+.s020,.s028,.s072,.s085,.s205{font-size:clamp(1.8rem,4vw,2.75rem);text-wrap:balance}
+.s006:hover,.s197:hover,.s211:hover,.s220:hover{text-decoration:underline}
+.s013:hover,.s138:hover,.s142:hover,.s217:hover{background:#19389F}
+.s023:hover{border-color:#2448C9}
+.s212{width:100%}
+.s215,.s216{width:100%;min-width:0}
+.form-note{font-size:14px;line-height:1.5;color:#5A5F6B;margin:0}
+.s194{font-family:'Sora',sans-serif}
+@media(max-width:640px){
+ .s003{padding:20px;gap:20px}.s004{font-size:18px}.s005{gap:14px 18px;font-size:14px}
+ .s008{padding:48px 20px 56px}.s018,.s202{padding:56px 20px}
+ .s011{font-size:18px}.s015{margin-top:40px;grid-template-columns:1fr}
+ .s022,.s035,.s134,.s213{grid-template-columns:1fr}
+ .s096{height:430px;flex-basis:100%}.s097{width:90%;height:260px}.s117{width:180px;height:340px;top:70px}
+ .s120{padding:14px}.s130{font-size:12px}.s134>*{min-width:0}
+ .s203{gap:28px}.s212{padding:20px}.s218{margin-top:48px}
+ .s013,.s014,.s007,.s217{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+}
+
+</style>
+</head>
+<body>
+<a href="#inicio" class="skip-link">Ir al contenido</a>
+<div class="s001">
+
+<section class="s002">
+<header class="s003">
+<a href="#inicio" class="s004"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8FA6FF" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-25 12 12)"></ellipse></svg>Planet STEAM Labs</a>
+<nav aria-label="Principal" class="s005">
+<a href="#servicios" class="s006">Servicios</a>
+<a href="#producto" class="s006">Producto</a>
+<a href="#metodologia" class="s006">Metodología</a>
+<a href="#portafolio" class="s006">Portafolio</a>
+<a href="#nosotros" class="s006">Equipo</a>
+<a href="#contacto" class="s007">Agendar diagnóstico</a>
+</nav>
+</header>
+
+<div id="inicio" class="s008">
+<p class="s009">Implementación de IA para empresas · Lima, Perú</p>
+<h1 class="s010">Llevamos la IA del piloto a la operación diaria.</h1>
+<p class="s011">Diseñamos e implementamos automatizaciones, software y agentes de IA que se integran a sus sistemas y se miden en resultados de negocio.</p>
+<div class="s012">
+<a href="#contacto" class="s013">Agendar diagnóstico</a>
+<a href="#servicios" class="s014">Explorar servicios</a>
+</div>
+<div class="s015">
+<div><div class="s016">50 soluciones</div><div class="s017">20 Quick Solutions y 30 Business Solutions</div></div>
+<div><div class="s016">1 plataforma propia</div><div class="s017">Planet STEAM, plataforma educativa</div></div>
+<div><div class="s016">Multinube</div><div class="s017">Despliegue en Google Cloud, AWS y Azure</div></div>
+</div>
+</div>
+</section>
+
+<section id="servicios" class="s018">
+<p class="s019">Catálogo · 50 soluciones</p>
+<h2 class="s020">Resolvemos problemas de negocio, no vendemos herramientas.</h2>
+<p class="s021">Software, inteligencia artificial, automatización, ingeniería de datos y arquitectura tecnológica, organizados en cinco especializaciones. Elija el tipo de oferta que mejor se ajusta a su necesidad.</p>
+<nav aria-label="Tipos de oferta" class="s022">
+<a href="#quick" class="s023">
+<span class="s024">01 · 20 servicios</span><span class="s025">Quick Solutions</span><span class="s026">Servicios puntuales, con alcance y entregables específicos.</span></a>
+<a href="#business" class="s023">
+<span class="s024">02 · 30 soluciones</span><span class="s025">Business Solutions</span><span class="s026">Soluciones empresariales integradas, con varios componentes y tecnologías.</span></a>
+<a href="#enterprise" class="s023">
+<span class="s024">03 · Implementaciones</span><span class="s025">Enterprise Solutions</span><span class="s026">Combinaciones de soluciones y casos de mayor alcance por industria.</span></a>
+<a href="#tecnologias" class="s023">
+<span class="s024">04 · 6 ediciones</span><span class="s025">Technology Editions</span><span class="s026">Opciones tecnológicas para implementar cada solución.</span></a>
+</nav>
+
+<div id="catalog-tools" class="catalog-tools" role="search" aria-label="Buscar en el catálogo">
+<label class="catalog-field catalog-field--grow"><span>Buscar</span><input id="cat-search" type="search" placeholder="Ej.: ERP, chatbot, dashboard, pagos" autocomplete="off"></label>
+<label class="catalog-field"><span>Tipo de oferta</span><select id="cat-type"><option value="all">Todas</option><option value="quick">Quick Solutions</option><option value="business">Business Solutions</option></select></label>
+<label class="catalog-field"><span>Especialización</span><select id="cat-spec"><option value="all">Todas</option><option>AI Engineering</option><option>Software Engineering</option><option>Solutions &amp; Systems Architecture</option><option>Forward Deployed Engineering</option><option>Data Engineering &amp; Analytics</option></select></label>
+<button id="cat-reset" type="button" class="catalog-reset">Limpiar</button>
+<p id="cat-count" class="catalog-count" aria-live="polite">Mostrando 50 de 50 ofertas</p>
+<p id="cat-empty" class="catalog-empty" hidden>No hay ofertas que coincidan. Pruebe con otra palabra o <a href="#contacto">cuéntenos su caso</a>.</p>
+</div>
+<div id="quick" class="s027">
+<p class="s019">Quick Solutions · 20 servicios</p>
+<h2 class="s028">Servicios puntuales, con alcance y entregables específicos.</h2>
+<p class="s029">Se contratan por entregable o mediante cotización, según el alcance de cada caso.</p>
+<nav aria-label="Especializaciones" class="s030"><a href="#quick-sw" class="s031">Software Engineering</a><a href="#quick-ai" class="s031">AI Engineering</a><a href="#quick-dt" class="s031">Data Engineering & Analytics</a><a href="#quick-fd" class="s031">Forward Deployed Engineering</a><a href="#quick-ar" class="s031">Solutions & Systems Architecture</a></nav>
+<div id="quick-sw" class="s032">
+<h3 class="s033">Software Engineering <span class="s034">· 6</span></h3>
+<div class="s035">
+<article id="q01" class="s036">
+<div class="s037"><span class="s038">Q01</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Landing Pages Profesionales</h4>
+<p class="s041">Páginas orientadas a presentar productos y captar clientes.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Página responsive</li><li>Formulario de contacto conectado</li><li>Publicación en el dominio del cliente</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q01 Landing Pages Profesionales" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q02" class="s036">
+<div class="s037"><span class="s038">Q02</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Sitios Web Corporativos</h4>
+<p class="s041">Webs institucionales para empresas y organizaciones.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Sitio de varias secciones</li><li>Contenido editable por el equipo</li><li>Configuración básica de SEO</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q02 Sitios Web Corporativos" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q03" class="s036">
+<div class="s037"><span class="s038">Q03</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Portafolios y Webs Personales</h4>
+<p class="s041">Sitios profesionales para mostrar experiencia y proyectos.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Sitio de presentación profesional</li><li>Sección de proyectos o casos</li><li>Publicación y dominio</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q03 Portafolios y Webs Personales" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q04" class="s036">
+<div class="s037"><span class="s038">Q04</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Formularios y Páginas de Captación</h4>
+<p class="s041">Formularios, registros y captación de oportunidades.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Formularios con validación</li><li>Envío a correo, hoja de cálculo o CRM</li><li>Página de confirmación</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q04 Formularios y Páginas de Captación" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q05" class="s036">
+<div class="s037"><span class="s038">Q05</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Mejoras y Mantenimiento Web</h4>
+<p class="s041">Correcciones, actualizaciones y optimización de sitios existentes.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Diagnóstico del sitio</li><li>Correcciones y actualizaciones</li><li>Informe de cambios realizados</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q05 Mejoras y Mantenimiento Web" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q06" class="s036">
+<div class="s037"><span class="s038">Q06</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Scripts y Utilidades Personalizadas</h4>
+<p class="s041">Pequeñas herramientas para resolver tareas específicas.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Herramienta documentada</li><li>Instrucciones de uso</li><li>Pruebas con datos de ejemplo</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q06 Scripts y Utilidades Personalizadas" class="s044">Solicitar cotización →</a>
+</article>
+</div>
+</div>
+<div id="quick-ai" class="s032">
+<h3 class="s033">AI Engineering <span class="s034">· 3</span></h3>
+<div class="s035">
+<article id="q07" class="s036">
+<div class="s037"><span class="s038">Q07</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">Chatbots para Webs y Negocios</h4>
+<p class="s041">Asistentes conversacionales para preguntas frecuentes y atención.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Chatbot con base de preguntas frecuentes</li><li>Integración en web o mensajería</li><li>Derivación a una persona cuando corresponde</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q07 Chatbots para Webs y Negocios" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q08" class="s036">
+<div class="s037"><span class="s038">Q08</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">Asistentes de IA Personalizados</h4>
+<p class="s041">Asistentes adaptados a tareas o conocimientos específicos.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Asistente configurado para una tarea</li><li>Fuentes de conocimiento definidas</li><li>Guía de uso para el equipo</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q08 Asistentes de IA Personalizados" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q09" class="s036">
+<div class="s037"><span class="s038">Q09</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">Automatización de Documentos con IA</h4>
+<p class="s041">Extracción, clasificación y procesamiento asistido de documentos.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Flujo de extracción o clasificación</li><li>Revisión humana de casos dudosos</li><li>Exportación a hoja de cálculo o sistema</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q09 Automatización de Documentos con IA" class="s044">Solicitar cotización →</a>
+</article>
+</div>
+</div>
+<div id="quick-dt" class="s032">
+<h3 class="s033">Data Engineering & Analytics <span class="s034">· 5</span></h3>
+<div class="s035">
+<article id="q10" class="s036">
+<div class="s037"><span class="s038">Q10</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Dashboards en Power BI o Excel</h4>
+<p class="s041">Paneles para visualizar indicadores y resultados.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Panel con indicadores acordados</li><li>Conexión a las fuentes de datos</li><li>Guía de actualización</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q10 Dashboards en Power BI o Excel" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q11" class="s036">
+<div class="s037"><span class="s038">Q11</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Automatización de Reportes</h4>
+<p class="s041">Generación y actualización automática de informes.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Reporte generado automáticamente</li><li>Actualización programada</li><li>Validaciones antes de publicar</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q11 Automatización de Reportes" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q12" class="s036">
+<div class="s037"><span class="s038">Q12</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Limpieza y Transformación de Datos</h4>
+<p class="s041">Preparación, depuración y normalización de datos.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Datos depurados y normalizados</li><li>Proceso reutilizable</li><li>Registro de reglas aplicadas</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q12 Limpieza y Transformación de Datos" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q13" class="s036">
+<div class="s037"><span class="s038">Q13</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Scripts de Excel, CSV y Python</h4>
+<p class="s041">Automatizaciones específicas para archivos y datos.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Script documentado</li><li>Pruebas con archivos reales</li><li>Instrucciones de ejecución</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q13 Scripts de Excel, CSV y Python" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q14" class="s036">
+<div class="s037"><span class="s038">Q14</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Integración de Datos entre Sistemas</h4>
+<p class="s041">Consolidación de información de distintas fuentes.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Consolidación de fuentes</li><li>Carga programada</li><li>Documentación del flujo</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q14 Integración de Datos entre Sistemas" class="s044">Solicitar cotización →</a>
+</article>
+</div>
+</div>
+<div id="quick-fd" class="s032">
+<h3 class="s033">Forward Deployed Engineering <span class="s034">· 4</span></h3>
+<div class="s035">
+<article id="q15" class="s036">
+<div class="s037"><span class="s038">Q15</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Automatización de Tareas Repetitivas</h4>
+<p class="s041">Eliminación de tareas manuales mediante flujos automatizados.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Flujo automatizado</li><li>Alertas ante errores</li><li>Documentación y traspaso</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q15 Automatización de Tareas Repetitivas" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q16" class="s036">
+<div class="s037"><span class="s038">Q16</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Integraciones entre Aplicaciones</h4>
+<p class="s041">Conexión de herramientas empresariales mediante APIs y conectores.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Conexión por API o conector</li><li>Correspondencia de datos entre aplicaciones</li><li>Pruebas de extremo a extremo</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q16 Integraciones entre Aplicaciones" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q17" class="s036">
+<div class="s037"><span class="s038">Q17</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Formularios y Aplicaciones Internas</h4>
+<p class="s041">Herramientas ligeras para operaciones y equipos internos.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Aplicación ligera para el equipo</li><li>Accesos por usuario</li><li>Guía de uso</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q17 Formularios y Aplicaciones Internas" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q18" class="s036">
+<div class="s037"><span class="s038">Q18</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Configuración y Personalización de CRM</h4>
+<p class="s041">Adaptación de sistemas comerciales a procesos existentes.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Etapas y campos adaptados al proceso</li><li>Automatizaciones básicas del CRM</li><li>Capacitación del equipo</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q18 Configuración y Personalización de CRM" class="s044">Solicitar cotización →</a>
+</article>
+</div>
+</div>
+<div id="quick-ar" class="s032">
+<h3 class="s033">Solutions & Systems Architecture <span class="s034">· 2</span></h3>
+<div class="s035">
+<article id="q19" class="s036">
+<div class="s037"><span class="s038">Q19</span><span class="s039">Solutions & Systems Architecture</span></div>
+<h4 class="s040">Publicación y Configuración de Aplicaciones</h4>
+<p class="s041">Despliegue y configuración técnica de aplicaciones.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Despliegue en la nube elegida</li><li>Dominio, HTTPS y variables de entorno</li><li>Guía de operación</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q19 Publicación y Configuración de Aplicaciones" class="s044">Solicitar cotización →</a>
+</article>
+<article id="q20" class="s036">
+<div class="s037"><span class="s038">Q20</span><span class="s039">Solutions & Systems Architecture</span></div>
+<h4 class="s040">Diagnóstico y Optimización Técnica</h4>
+<p class="s041">Evaluación de problemas de rendimiento, arquitectura e integración.</p>
+<details><summary class="s042">Ver entregables</summary><ul class="s043"><li>Informe de hallazgos</li><li>Recomendaciones priorizadas</li><li>Plan de mejoras</li></ul></details>
+<a href="#contacto" aria-label="Solicitar cotización: Q20 Diagnóstico y Optimización Técnica" class="s044">Solicitar cotización →</a>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<section id="business" class="s045">
+<div class="s018">
+<p class="s019">Business Solutions · 30 soluciones</p>
+<h2 class="s028">Soluciones empresariales integradas, en cinco especializaciones.</h2>
+<p class="s029">Cada solución puede combinar varios componentes y tecnologías. Su alcance se define con un diagnóstico.</p>
+<div class="s046">
+<div class="s047"><span class="s048">Core</span><p class="s049">Implementación inicial con alcance funcional definido.</p></div><div class="s047"><span class="s050">Advanced</span><p class="s049">Integraciones, automatizaciones y mayor personalización.</p></div><div class="s047"><span class="s051">Enterprise</span><p class="s049">Seguridad, gobierno, operación, escalabilidad y arquitectura adaptada a requisitos empresariales.</p></div>
+</div>
+<p class="s052">Los niveles describen el alcance de una implementación. No son productos adicionales ni garantizan las mismas funcionalidades en todas las soluciones.</p>
+<nav aria-label="Especializaciones" class="s030"><a href="#business-ai" class="s031">AI Engineering</a><a href="#business-sw" class="s031">Software Engineering</a><a href="#business-ar" class="s031">Solutions & Systems Architecture</a><a href="#business-fd" class="s031">Forward Deployed Engineering</a><a href="#business-dt" class="s031">Data Engineering & Analytics</a></nav>
+<div id="business-ai" class="s032">
+<h3 class="s033">AI Engineering <span class="s034">· 6</span></h3>
+<div class="s035">
+<article id="c01" class="s036">
+<div class="s037"><span class="s038">C01</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">Enterprise AI Assistant Platform</h4>
+<p class="s053">Asistentes inteligentes para clientes y empleados.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Equipos que responden las mismas consultas una y otra vez, en varios canales.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Atención disponible fuera de horario y respuestas consistentes.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Asistente en los canales acordados</li><li>Base de conocimiento y reglas de derivación</li><li>Panel de conversaciones</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Web, WhatsApp, Microsoft Teams, CRM</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C01 Enterprise AI Assistant Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c02" class="s036">
+<div class="s037"><span class="s038">C02</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">Enterprise Knowledge Platform</h4>
+<p class="s053">Consulta y búsqueda del conocimiento empresarial.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> La información está repartida en documentos, carpetas y correos.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Búsqueda en lenguaje natural con referencia a la fuente.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Indexación de fuentes documentales</li><li>Búsqueda con citas</li><li>Control de acceso por rol</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>SharePoint, Google Drive, gestores documentales</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C02 Enterprise Knowledge Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c03" class="s036">
+<div class="s037"><span class="s038">C03</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">Intelligent Process Automation</h4>
+<p class="s053">Automatización inteligente de procesos.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Procesos con decisiones manuales que frenan la operación.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Menos trabajo manual y trazabilidad de cada paso.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Mapa del proceso</li><li>Flujo con agentes y reglas de negocio</li><li>Registro de ejecuciones</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, CRM, correo, hojas de cálculo</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C03 Intelligent Process Automation" class="s044">Solicitar información →</a>
+</article>
+<article id="c04" class="s036">
+<div class="s037"><span class="s038">C04</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">Sales & Customer AI Platform</h4>
+<p class="s053">Agentes para ventas y atención comercial.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> El equipo comercial no alcanza a responder y dar seguimiento a todos los clientes.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Seguimiento oportuno y registro de cada interacción.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Agente para consultas y cotizaciones</li><li>Registro de oportunidades</li><li>Reportes de conversaciones</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>WhatsApp, CRM, catálogo de productos</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C04 Sales & Customer AI Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c05" class="s036">
+<div class="s037"><span class="s038">C05</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">Intelligent Document Processing</h4>
+<p class="s053">Procesamiento inteligente de documentos.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Facturas, contratos o formularios que se procesan a mano.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Menos errores de digitación y procesamiento más ágil.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Extracción y validación de campos</li><li>Revisión humana de excepciones</li><li>Exportación a los sistemas de la empresa</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, gestor documental, correo</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C05 Intelligent Document Processing" class="s044">Solicitar información →</a>
+</article>
+<article id="c06" class="s036">
+<div class="s037"><span class="s038">C06</span><span class="s039">AI Engineering</span></div>
+<h4 class="s040">AI Decision Intelligence Platform</h4>
+<p class="s053">Recomendaciones y apoyo a decisiones.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Decisiones tomadas con reportes que llegan tarde o sin contexto.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Recomendaciones explicadas a partir de los datos de la empresa.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Modelo o agente de recomendación</li><li>Explicación de cada sugerencia</li><li>Panel de seguimiento</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Data warehouse, BI, ERP</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C06 AI Decision Intelligence Platform" class="s044">Solicitar información →</a>
+</article>
+</div>
+</div>
+<div id="business-sw" class="s032">
+<h3 class="s033">Software Engineering <span class="s034">· 6</span></h3>
+<div class="s035">
+<article id="c07" class="s036">
+<div class="s037"><span class="s038">C07</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Digital Experience Platform</h4>
+<p class="s053">Webs, portales y experiencias digitales.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Webs y portales difíciles de actualizar o desconectados del negocio.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Contenido administrable por el equipo y una experiencia consistente.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Sitio o portal con CMS</li><li>Diseño responsive y accesible</li><li>Analítica configurada</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>CMS, CRM, analítica web</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C07 Digital Experience Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c08" class="s036">
+<div class="s037"><span class="s038">C08</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Commerce & Payments Platform</h4>
+<p class="s053">Comercio electrónico, pedidos y pagos.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Pedidos repartidos entre canales y pagos sin conciliar.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Pedidos y pagos centralizados en un solo flujo.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Tienda o módulo de pedidos</li><li>Pasarela de pagos integrada</li><li>Conciliación de pagos</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Pasarelas de pago, inventario, facturación</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C08 Commerce & Payments Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c09" class="s036">
+<div class="s037"><span class="s038">C09</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Enterprise Operations Platform</h4>
+<p class="s053">Gestión digital de operaciones empresariales.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Operaciones gestionadas con hojas de cálculo y procesos manuales.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Procesos digitalizados con la información en un solo lugar.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Aplicación de gestión operativa</li><li>Roles y permisos</li><li>Reportes operativos</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, bases de datos, correo</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C09 Enterprise Operations Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c10" class="s036">
+<div class="s037"><span class="s038">C10</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Sales & CRM Platform</h4>
+<p class="s053">Clientes, oportunidades y cotizaciones.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Clientes, oportunidades y cotizaciones sin un seguimiento ordenado.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Visibilidad del embudo comercial.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>CRM adaptado al proceso de venta</li><li>Cotizaciones y seguimiento</li><li>Indicadores comerciales</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Correo, WhatsApp, facturación</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C10 Sales & CRM Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c11" class="s036">
+<div class="s037"><span class="s038">C11</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">Custom Business Applications</h4>
+<p class="s053">Aplicaciones empresariales a medida.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Procesos que ninguna herramienta estándar cubre.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Software ajustado a la forma de trabajar de la empresa.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Aplicación web, móvil o de escritorio</li><li>Pruebas y documentación</li><li>Despliegue y traspaso</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>APIs internas, bases de datos</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C11 Custom Business Applications" class="s044">Solicitar información →</a>
+</article>
+<article id="c12" class="s036">
+<div class="s037"><span class="s038">C12</span><span class="s039">Software Engineering</span></div>
+<h4 class="s040">SaaS & Customer Portal Platform</h4>
+<p class="s053">Portales, suscripciones y servicios digitales.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Clientes que dependen de correos y llamadas para consultar su información.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Autoservicio para clientes y suscripciones gestionadas.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Portal de clientes con autenticación</li><li>Gestión de suscripciones</li><li>Panel de administración</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Pagos, CRM, soporte</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C12 SaaS & Customer Portal Platform" class="s044">Solicitar información →</a>
+</article>
+</div>
+</div>
+<div id="business-ar" class="s032">
+<h3 class="s033">Solutions & Systems Architecture <span class="s034">· 6</span></h3>
+<div class="s035">
+<article id="c13" class="s036">
+<div class="s037"><span class="s038">C13</span><span class="s039">Solutions & Systems Architecture</span></div>
+<h4 class="s040">Enterprise Systems Modernization</h4>
+<p class="s053">Modernización de sistemas existentes.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Sistemas heredados costosos de mantener y difíciles de integrar.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Migración gradual sin detener la operación.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Diagnóstico del sistema actual</li><li>Plan de migración por etapas</li><li>Migración con plan de reversión</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Sistemas heredados, bases de datos, APIs</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C13 Enterprise Systems Modernization" class="s044">Solicitar información →</a>
+</article>
+<article id="c14" class="s036">
+<div class="s037"><span class="s038">C14</span><span class="s039">Solutions & Systems Architecture</span></div>
+<h4 class="s040">Enterprise Integration Platform</h4>
+<p class="s053">Integración entre aplicaciones y sistemas.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Aplicaciones que no se comunican y datos que se copian a mano.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Información sincronizada entre sistemas.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Mapa de integraciones</li><li>APIs o flujos de integración</li><li>Monitoreo de errores</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, CRM, e-commerce, servicios cloud</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C14 Enterprise Integration Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c15" class="s036">
+<div class="s037"><span class="s038">C15</span><span class="s039">Solutions & Systems Architecture</span></div>
+<h4 class="s040">Cloud Infrastructure Platform</h4>
+<p class="s053">Infraestructura cloud adaptable.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Infraestructura configurada a mano, difícil de replicar y de controlar en costos.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Entornos reproducibles y despliegues ordenados.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Infraestructura como código</li><li>Pipeline de CI/CD</li><li>Control de accesos y costos</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Microsoft Azure, AWS, Google Cloud</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C15 Cloud Infrastructure Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c16" class="s036">
+<div class="s037"><span class="s038">C16</span><span class="s039">Solutions & Systems Architecture</span></div>
+<h4 class="s040">Business Continuity & Recovery</h4>
+<p class="s053">Continuidad operativa y recuperación.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Riesgo de perder datos o servicio ante una falla.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Recuperación planificada y probada.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Análisis de riesgos</li><li>Respaldos y plan de recuperación</li><li>Pruebas de restauración</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Bases de datos, almacenamiento cloud</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C16 Business Continuity & Recovery" class="s044">Solicitar información →</a>
+</article>
+<article id="c17" class="s036">
+<div class="s037"><span class="s038">C17</span><span class="s039">Solutions & Systems Architecture</span></div>
+<h4 class="s040">Observability & Operations Platform</h4>
+<p class="s053">Monitoreo, rendimiento e incidentes.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Los problemas se descubren cuando el usuario reclama.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Detección temprana y diagnóstico más rápido.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Métricas, logs y alertas</li><li>Paneles de operación</li><li>Procedimientos ante incidentes</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Servicios cloud, aplicaciones, modelos de IA</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C17 Observability & Operations Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c18" class="s036">
+<div class="s037"><span class="s038">C18</span><span class="s039">Solutions & Systems Architecture</span></div>
+<h4 class="s040">Enterprise Security & Governance</h4>
+<p class="s053">Seguridad, accesos y controles.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Accesos, datos y uso de IA sin controles claros.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Riesgos identificados y controles documentados.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Revisión de accesos y permisos</li><li>Políticas de datos y de uso de IA</li><li>Plan de remediación</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Proveedores de identidad, nube, aplicaciones</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C18 Enterprise Security & Governance" class="s044">Solicitar información →</a>
+</article>
+</div>
+</div>
+<div id="business-fd" class="s032">
+<h3 class="s033">Forward Deployed Engineering <span class="s034">· 6</span></h3>
+<div class="s035">
+<article id="c19" class="s036">
+<div class="s037"><span class="s038">C19</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Digital Transformation Solutions</h4>
+<p class="s053">Transformación de procesos empresariales.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Procesos en papel o en planillas que limitan el crecimiento.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Hoja de ruta clara y primeros procesos digitalizados.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Diagnóstico de procesos</li><li>Hoja de ruta priorizada</li><li>Implementación del primer caso</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Según el proceso</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C19 Digital Transformation Solutions" class="s044">Solicitar información →</a>
+</article>
+<article id="c20" class="s036">
+<div class="s037"><span class="s038">C20</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">ERP Implementation & Integration</h4>
+<p class="s053">Implementación y conexión de ERP.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> ERP desconectado de otras áreas o subutilizado.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Información integrada entre el ERP y el resto de sistemas.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Análisis de procesos y datos</li><li>Configuración o integración del ERP</li><li>Migración de datos</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, CRM, e-commerce, BI</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C20 ERP Implementation & Integration" class="s044">Solicitar información →</a>
+</article>
+<article id="c21" class="s036">
+<div class="s037"><span class="s038">C21</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Field Sales & Commercial Operations</h4>
+<p class="s053">Gestión de vendedores, visitas y pedidos.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Vendedores en campo sin información actualizada de clientes y pedidos.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Pedidos y visitas registrados en el momento.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>App móvil para vendedores</li><li>Rutas, visitas y pedidos</li><li>Panel de supervisión</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, CRM, inventario</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C21 Field Sales & Commercial Operations" class="s044">Solicitar información →</a>
+</article>
+<article id="c22" class="s036">
+<div class="s037"><span class="s038">C22</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Enterprise Workflow Automation</h4>
+<p class="s053">Automatización de flujos entre áreas y sistemas.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Aprobaciones y traspasos entre áreas que se pierden en el correo.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Flujos con responsables y plazos visibles.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Flujos de aprobación</li><li>Notificaciones y recordatorios</li><li>Registro de auditoría</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Microsoft 365, Google Workspace, ERP</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C22 Enterprise Workflow Automation" class="s044">Solicitar información →</a>
+</article>
+<article id="c23" class="s036">
+<div class="s037"><span class="s038">C23</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Supply Chain Optimization Platform</h4>
+<p class="s053">Compras, inventario y logística.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Compras e inventario gestionados sin visibilidad de la demanda.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Mejor visibilidad de inventario y abastecimiento.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Visibilidad de inventario y compras</li><li>Alertas de quiebre o exceso de stock</li><li>Recomendaciones de reposición</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, WMS, proveedores</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C23 Supply Chain Optimization Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c24" class="s036">
+<div class="s037"><span class="s038">C24</span><span class="s039">Forward Deployed Engineering</span></div>
+<h4 class="s040">Industry-Specific Intelligent Solutions</h4>
+<p class="s053">Soluciones adaptadas a sectores industriales.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Necesidades propias de un sector que las herramientas genéricas no cubren.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Soluciones diseñadas alrededor del proceso del sector.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Diagnóstico del sector y del proceso</li><li>Solución adaptada</li><li>Indicadores del caso de uso</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Según el sector</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C24 Industry-Specific Intelligent Solutions" class="s044">Solicitar información →</a>
+</article>
+</div>
+</div>
+<div id="business-dt" class="s032">
+<h3 class="s033">Data Engineering & Analytics <span class="s034">· 6</span></h3>
+<div class="s035">
+<article id="c25" class="s036">
+<div class="s037"><span class="s038">C25</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Business Intelligence Platform</h4>
+<p class="s053">Dashboards, indicadores y reporting.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Reportes armados a mano y cifras distintas según el área.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Una sola versión de los indicadores.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Modelo de datos e indicadores</li><li>Dashboards por área</li><li>Actualización programada</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, CRM, hojas de cálculo, bases de datos</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C25 Business Intelligence Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c26" class="s036">
+<div class="s037"><span class="s038">C26</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Enterprise Data Platform</h4>
+<p class="s053">Integración y centralización de datos.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Datos repartidos en sistemas que no se pueden cruzar.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Datos centralizados, confiables y gobernados.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Arquitectura de datos</li><li>Pipelines de ingesta y transformación</li><li>Controles de calidad de datos</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Data warehouse, lakehouse, sistemas operativos</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C26 Enterprise Data Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c27" class="s036">
+<div class="s037"><span class="s038">C27</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Financial Intelligence Platform</h4>
+<p class="s053">Rentabilidad, costos y finanzas.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Rentabilidad y costos que se conocen tarde.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Visibilidad de márgenes, costos y flujo de caja.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Modelo financiero de datos</li><li>Dashboards de rentabilidad y caja</li><li>Alertas de desviaciones</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, contabilidad, bancos</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C27 Financial Intelligence Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c28" class="s036">
+<div class="s037"><span class="s038">C28</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Sales & Customer Intelligence</h4>
+<p class="s053">Inteligencia comercial y de clientes.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Poca información sobre qué clientes y productos generan valor.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Decisiones comerciales basadas en datos.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Segmentación de clientes</li><li>Análisis de ventas y productos</li><li>Dashboards comerciales</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>CRM, POS, e-commerce</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C28 Sales & Customer Intelligence" class="s044">Solicitar información →</a>
+</article>
+<article id="c29" class="s036">
+<div class="s037"><span class="s038">C29</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Demand Forecasting & Planning Platform</h4>
+<p class="s053">Pronósticos y planificación de demanda.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Compras y producción planificadas por intuición.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Planificación apoyada en pronósticos revisables.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Modelo de pronóstico</li><li>Escenarios de planificación</li><li>Seguimiento de la precisión</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>ERP, ventas históricas, inventario</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C29 Demand Forecasting & Planning Platform" class="s044">Solicitar información →</a>
+</article>
+<article id="c30" class="s036">
+<div class="s037"><span class="s038">C30</span><span class="s039">Data Engineering & Analytics</span></div>
+<h4 class="s040">Marketing & Growth Intelligence</h4>
+<p class="s053">Campañas, conversiones y crecimiento.</p>
+<p class="s041"><strong class="s054">Problema que resuelve:</strong> Campañas sin medición clara de lo que convierte.</p>
+<div aria-label="Niveles de implementación" class="s055"><span class="s048">Core</span><span class="s050">Advanced</span><span class="s051">Enterprise</span></div>
+<details><summary class="s042">Ver ficha completa</summary>
+<div class="s056">
+<div><strong class="s054">Beneficios esperados</strong><br>Medición de campañas y del recorrido del cliente.</div>
+<div><strong class="s054">Entregables principales</strong><ul class="s043"><li>Tracking y analítica configurados</li><li>Dashboards de campañas</li><li>Experimentos de conversión</li></ul></div>
+<div><strong class="s054">Posibles integraciones</strong><br>Plataformas de analítica y publicidad, CRM</div>
+</div></details>
+<a href="#contacto" aria-label="Solicitar información: C30 Marketing & Growth Intelligence" class="s044">Solicitar información →</a>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<section id="enterprise" class="s057">
+<div class="s058">
+<p class="s059">Enterprise Solutions</p>
+<h2 class="s060">Implementaciones de mayor alcance, que combinan varias Business Solutions.</h2>
+<p class="s061">Se diseñan después de un diagnóstico y no son productos adicionales. Los sectores indicados son ejemplos de aplicación, no casos de clientes.</p>
+<div class="s062">
+<div class="s063">
+<div class="s064">COMBINACIÓN 01</div>
+<h3 class="s065">Enterprise Agent Platform</h3>
+<p class="s066">Asistentes y agentes con acceso a herramientas y al conocimiento interno, con controles de seguridad, monitoreo y evaluación continua.</p>
+<div class="s067"><span class="s068">Combina:</span><a href="#c01" title="Enterprise AI Assistant Platform" class="s069">C01</a><a href="#c02" title="Enterprise Knowledge Platform" class="s069">C02</a><a href="#c03" title="Intelligent Process Automation" class="s069">C03</a><a href="#c17" title="Observability & Operations Platform" class="s069">C17</a><a href="#c18" title="Enterprise Security & Governance" class="s069">C18</a></div>
+<p class="s070">Servicios financieros · Educación · Atención al cliente</p>
+</div>
+<div class="s063">
+<div class="s064">COMBINACIÓN 02</div>
+<h3 class="s065">Production Multi-Tenant SaaS</h3>
+<p class="s066">Plataforma para ofrecer un servicio digital a varias empresas cliente, con portal, suscripciones, pagos e infraestructura operada.</p>
+<div class="s067"><span class="s068">Combina:</span><a href="#c08" title="Commerce & Payments Platform" class="s069">C08</a><a href="#c12" title="SaaS & Customer Portal Platform" class="s069">C12</a><a href="#c15" title="Cloud Infrastructure Platform" class="s069">C15</a><a href="#c17" title="Observability & Operations Platform" class="s069">C17</a></div>
+<p class="s070">Software · Educación · Servicios profesionales</p>
+</div>
+<div class="s063">
+<div class="s064">COMBINACIÓN 03</div>
+<h3 class="s065">Event-Driven Data &amp; AI System</h3>
+<p class="s066">Datos operativos que se actualizan de forma continua y alimentan pronósticos, recomendaciones y alertas.</p>
+<div class="s067"><span class="s068">Combina:</span><a href="#c06" title="AI Decision Intelligence Platform" class="s069">C06</a><a href="#c14" title="Enterprise Integration Platform" class="s069">C14</a><a href="#c26" title="Enterprise Data Platform" class="s069">C26</a><a href="#c29" title="Demand Forecasting & Planning Platform" class="s069">C29</a></div>
+<p class="s070">Retail · Consumo masivo · Logística</p>
+</div>
+<div class="s063">
+<div class="s064">COMBINACIÓN 04</div>
+<h3 class="s065">Forward Deployed Enterprise Integration</h3>
+<p class="s066">Integración con ERP y sistemas heredados, con migración gradual y sin detener la operación del cliente.</p>
+<div class="s067"><span class="s068">Combina:</span><a href="#c13" title="Enterprise Systems Modernization" class="s069">C13</a><a href="#c14" title="Enterprise Integration Platform" class="s069">C14</a><a href="#c19" title="Digital Transformation Solutions" class="s069">C19</a><a href="#c20" title="ERP Implementation & Integration" class="s069">C20</a></div>
+<p class="s070">Manufactura · Distribución · Servicios</p>
+</div>
+</div>
+<a href="#contacto" class="s071">Conversar sobre una implementación</a>
+</div>
+</section>
+
+<section id="tecnologias" class="s045">
+<div class="s018">
+<p class="s019">Tecnología</p>
+<h2 class="s072">Technology Editions</h2>
+<p class="s073">Adaptamos cada solución a la infraestructura, herramientas y necesidades de tu empresa.</p>
+<div class="s074">
+<article class="s075">
+<div class="s076"><div role="img" aria-label="Ilustración: panel de analítica" class="s077"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2448C9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="8" y1="16" x2="8" y2="12"></line><line x1="12" y1="16" x2="12" y2="9"></line><line x1="16" y1="16" x2="16" y2="11"></line></svg></div><span class="s078">01</span></div>
+<h3 class="s079">Microsoft</h3>
+<p class="s041">Soluciones integradas con el ecosistema Microsoft para analítica, automatización y operaciones.</p>
+<ul aria-label="Tecnologías representativas de Microsoft" class="s080"><li class="s081">Azure</li><li class="s081">Power BI</li><li class="s081">Fabric</li><li class="s081">Microsoft 365</li><li class="s081">SQL Server</li></ul>
+</article>
+<article class="s075">
+<div class="s076"><div role="img" aria-label="Ilustración: nube con función serverless" class="s077"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2448C9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 10.5 3.75 3.75 0 0 0 7 18z"></path><polyline points="12.5 10.5 10.5 14 13.5 14 11.5 17"></polyline></svg></div><span class="s078">02</span></div>
+<h3 class="s079">AWS</h3>
+<p class="s041">Arquitecturas cloud para aplicaciones, datos e inteligencia artificial.</p>
+<ul aria-label="Tecnologías representativas de AWS" class="s080"><li class="s081">Lambda</li><li class="s081">S3</li><li class="s081">Bedrock</li><li class="s081">Athena</li></ul>
+</article>
+<article class="s075">
+<div class="s076"><div role="img" aria-label="Ilustración: nube con servicio en contenedor" class="s077"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2448C9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 10.5 3.75 3.75 0 0 0 7 18z"></path><rect x="9.5" y="11.5" width="5" height="4" rx="0.8"></rect></svg></div><span class="s078">03</span></div>
+<h3 class="s079">Google Cloud</h3>
+<p class="s041">Soluciones para datos, aplicaciones y servicios inteligentes.</p>
+<ul aria-label="Tecnologías representativas de Google Cloud" class="s080"><li class="s081">BigQuery</li><li class="s081">Cloud Run</li><li class="s081">Vertex AI</li><li class="s081">Cloud Storage</li></ul>
+</article>
+<article class="s075">
+<div class="s076"><div role="img" aria-label="Ilustración: capas de un lakehouse" class="s077"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2448C9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 3 21 8 12 13 3 8 12 3"></polygon><polyline points="3 12.5 12 17.5 21 12.5"></polyline><polyline points="3 16.5 12 21.5 21 16.5"></polyline></svg></div><span class="s078">04</span></div>
+<h3 class="s079">Databricks</h3>
+<p class="s041">Plataformas de ingeniería de datos, analítica avanzada y machine learning.</p>
+<ul aria-label="Tecnologías representativas de Databricks" class="s080"><li class="s081">Lakehouse</li><li class="s081">Apache Spark</li><li class="s081">Delta Lake</li><li class="s081">MLflow</li></ul>
+</article>
+<article class="s075">
+<div class="s076"><div role="img" aria-label="Ilustración: código abierto" class="s077"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2448C9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="8 7 3 12 8 17"></polyline><polyline points="16 7 21 12 16 17"></polyline><line x1="13.5" y1="5" x2="10.5" y2="19"></line></svg></div><span class="s078">05</span></div>
+<h3 class="s079">Custom / Open Source</h3>
+<p class="s041">Desarrollo personalizado con tecnologías abiertas y control sobre la arquitectura.</p>
+<ul aria-label="Tecnologías representativas de Custom / Open Source" class="s080"><li class="s081">Python</li><li class="s081">FastAPI</li><li class="s081">PostgreSQL</li><li class="s081">React</li></ul>
+</article>
+<article class="s075">
+<div class="s076"><div role="img" aria-label="Ilustración: arquitectura híbrida entre nube y sistemas locales" class="s077"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2448C9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 9h7a2.5 2.5 0 0 0 .3-4.98A4 4 0 0 0 8.2 5 2.5 2.5 0 0 0 8.5 9z"></path><rect x="2.5" y="15" width="7" height="6" rx="1"></rect><line x1="4.5" y1="18" x2="7.5" y2="18"></line><rect x="14.5" y="15" width="7" height="6" rx="1"></rect><line x1="16.5" y1="18" x2="19.5" y2="18"></line><polyline points="12 9 12 12 6 12 6 15"></polyline><polyline points="12 12 18 12 18 15"></polyline></svg></div><span class="s078">06</span></div>
+<h3 class="s079">Hybrid / Multi-Cloud</h3>
+<p class="s041">Arquitecturas que combinan tecnologías, plataformas y sistemas existentes.</p>
+<ul aria-label="Tecnologías representativas de Hybrid / Multi-Cloud" class="s080"><li class="s081">Cloud</li><li class="s081">On-Premises</li><li class="s081">APIs</li><li class="s081">Integraciones</li></ul>
+</article>
+</div>
+<p class="s082">Las seis ediciones son alternativas de implementación, no productos independientes. La arquitectura se elige según los sistemas existentes, el presupuesto, los requisitos de seguridad y las necesidades de cada cliente, y no todas las tecnologías son necesarias en cada proyecto. Las marcas mencionadas pertenecen a sus propietarios; su mención indica compatibilidad técnica y no una alianza oficial.</p>
+</div>
+</section>
+
+<section id="producto" class="s057">
+<div class="s083">
+<div class="s084">
+<p class="s059">Producto propio</p>
+<h2 class="s085">Planet STEAM: desarrollo profesional impulsado por IA, en web y app.</h2>
+<p class="s086">Nuestra propia plataforma es la prueba de lo que implementamos: diagnostica las brechas de cada profesional, las cierra con formación práctica y lo conecta con oportunidades laborales.</p>
+<div class="s087">
+<div class="s088"><div class="s089">Career GPS</div><div class="s090">Diagnóstico frente a 339 roles</div></div>
+<div class="s091"><div class="s089">Cursos</div><div class="s092">Rutas por rol con laboratorios</div></div>
+<div class="s088"><div class="s089">Certificados</div><div class="s090">Simuladores de examen</div></div>
+<div class="s088"><div class="s089">Planet Job</div><div class="s090">Emparejamiento con ofertas</div></div>
+</div>
+<div class="s093">
+<a href="https://planetsteam.app" target="_blank" rel="noopener" class="s094">Visitar la plataforma</a>
+<span class="s095">App Android · en desarrollo</span>
+</div>
+</div>
+
+<div aria-hidden="true" class="s096">
+<div class="s097">
+<div class="s098"><span class="s099"></span><span class="s099"></span><span class="s099"></span><span class="s100">planetsteam.app</span></div>
+<div class="s101">
+<div class="s102"><span class="s103"></span><span class="s104"></span><span class="s104"></span><span class="s104"></span></div>
+<div class="s105">
+<div class="s106">Tu ruta: Data Analyst</div>
+<div class="s107"><div class="s108"><div class="s109">Match</div><div class="s110">68%</div></div><div class="s108"><div class="s109">Cursos</div><div class="s111">3 / 7</div></div></div>
+<div class="s112"><div class="s113"></div><div class="s114"></div><div class="s115"></div><div class="s116"></div></div>
+</div>
+</div>
+</div>
+<div class="s117">
+<div class="s118"><span class="s119"></span></div>
+<div class="s120">
+<div class="s121"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2448C9" stroke-width="2"><circle cx="12" cy="12" r="4.5"></circle><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-25 12 12)"></ellipse></svg>Planet STEAM</div>
+<div class="s122">Career GPS</div>
+<div class="s123">Data Analyst</div>
+<div class="s124"><div class="s125"></div></div>
+<div class="s126">68% de coincidencia con el rol</div>
+<div class="s127">Brechas a cerrar</div>
+<div class="s128"><span>SQL avanzado</span><span class="s038">Curso 3</span></div>
+<div class="s129"><span>Power BI</span><span class="s038">Curso 5</span></div>
+<div class="s129"><span>Storytelling</span><span class="s038">Curso 6</span></div>
+<div class="s130">Ver mi ruta</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="metodologia" class="s045">
+<div class="s018">
+<p class="s019">Metodología</p>
+<h2 class="s072">De la pregunta de negocio al sistema en producción.</h2>
+<ol class="s131">
+<li class="s132">
+<div class="s078">FASE 01 · 2 SEMANAS</div>
+<h3 class="s133">Diagnóstico</h3>
+<p class="s041">Mapeo de procesos, datos y sistemas. Portafolio de casos de uso priorizado por valor y esfuerzo.</p>
+</li>
+<li class="s132">
+<div class="s078">FASE 02 · 4–8 SEMANAS</div>
+<h3 class="s133">Piloto</h3>
+<p class="s041">El caso priorizado, construido y operando en un entorno controlado, con métricas acordadas desde el inicio.</p>
+</li>
+<li class="s132">
+<div class="s078">FASE 03 · SEGÚN ALCANCE</div>
+<h3 class="s133">Escala</h3>
+<p class="s041">Integración con sus sistemas, seguridad, permisos y capacitación del equipo que lo usará.</p>
+</li>
+<li class="s132">
+<div class="s078">FASE 04 · MENSUAL</div>
+<h3 class="s133">Acompañamiento</h3>
+<p class="s041">Seguimiento de indicadores, ajustes y nuevos casos de uso sobre lo ya construido.</p>
+</li>
+</ol>
+</div>
+</section>
+
+<section class="s018">
+<p class="s019">Paquetes</p>
+<h2 class="s072">Empiece con un alcance acotado y un resultado claro.</h2>
+<div class="s134">
+<article class="s135">
+<h3 class="s079">Diagnóstico de IA</h3>
+<div class="s136">Según alcance</div>
+<ul class="s137"><li>Entrevistas y mapeo de procesos</li><li>Evaluación de datos y sistemas</li><li>Casos de uso priorizados</li><li>Recomendación de piloto con caso de negocio</li></ul>
+<a href="#contacto" class="s138">Solicitar propuesta</a>
+</article>
+<article class="s139">
+<span class="s140">Recomendado para empezar</span>
+<h3 class="s079">Piloto de IA</h3>
+<div class="s136">Según alcance</div>
+<ul class="s141"><li>Un caso de uso en producción controlada</li><li>Métricas de éxito acordadas</li><li>Documentación y transferencia</li><li>Plan de escalamiento</li></ul>
+<a href="#contacto" class="s142">Solicitar propuesta</a>
+</article>
+<article class="s135">
+<h3 class="s079">Acompañamiento</h3>
+<div class="s136">A cotizar</div>
+<ul class="s137"><li>Seguimiento mensual de indicadores</li><li>Ajustes y mejoras continuas</li><li>Soporte técnico</li><li>Nuevos casos de uso</li></ul>
+<a href="#contacto" class="s138">Solicitar propuesta</a>
+</article>
+</div>
+</section>
+
+<section id="portafolio" class="s045">
+<div class="s018">
+<p class="s019">Portafolio</p>
+<h2 class="s085">Una selección de proyectos.</h2>
+
+<div class="s134">
+<article class="s143">
+<div aria-hidden="true" class="s144">
+<div class="s145">
+<div class="s146"><span class="s147"></span><span class="s147"></span><span class="s147"></span><span class="s148"></span></div>
+<div class="s149"><span class="s150">Hacienda Pozuzo 1859</span><span class="s151">Pedir</span></div>
+<div class="s152"><div class="s153"><div class="s154"></div><div class="s155"></div></div><div class="s153"><div class="s156"></div><div class="s157"></div></div><div class="s153"><div class="s158"></div><div class="s159"></div></div></div>
+</div>
+</div>
+<div class="s078">WEB Y MATERIAL COMERCIAL · CLIENTE</div>
+<h3 class="s079">Hacienda Pozuzo 1859</h3>
+<p class="s041"><strong>Desafío:</strong> productos artesanales de Pozuzo, con stock en Lima, sin una vitrina digital para vender.</p>
+<p class="s041"><strong>Solución:</strong> sitio web, brochure PDF e imágenes comerciales para su catálogo de más de 10 productos.</p>
+
+<div class="s160"><a href="https://www.instagram.com/hacienda_pozuzo_1859" target="_blank" rel="noopener">Instagram</a></div>
+</article>
+<article class="s143">
+<div aria-hidden="true" class="s161">
+<div class="s162">
+<div class="s163"><span class="s164"></span><span class="s164"></span><span class="s164"></span><span class="s165"></span></div>
+<div class="s166"><div class="s167"><div class="s168">Riesgo detectado</div><div class="s169">71%</div></div><div class="s167"><div class="s168">Expedientes</div><div class="s169">500</div></div><div class="s170"><div class="s171">Alertas</div><div class="s172">12</div></div></div>
+<div class="s173"><div class="s174"></div><div class="s175"></div><div class="s176"></div><div class="s177"></div><div class="s178"></div><div class="s179"></div></div>
+</div>
+</div>
+<div class="s078">AUDITORÍA FINANCIERA · PROYECTO</div>
+<h3 class="s079">NeboAudit</h3>
+<p class="s041"><strong>Desafío:</strong> auditar expedientes hipotecarios a mano es lento y los riesgos se detectan tarde.</p>
+<p class="s041"><strong>Solución:</strong> plataforma de auditoría de créditos hipotecarios con análisis de riesgos, reportes y visualización de datos.</p>
+<p class="s041"><strong>Explorar:</strong> documentación y demostración del proyecto; los datos de ejemplo no representan resultados de clientes.</p>
+<div class="s160"><a href="https://lcarrenoy.github.io/NeboAudit/" target="_blank" rel="noopener">Ver demo en vivo</a><a href="https://github.com/lcarrenoy/NeboAudit" target="_blank" rel="noopener">Ver repositorio</a></div>
+</article>
+<article class="s143">
+<div aria-hidden="true" class="s180">
+<div class="s181">
+<div class="s182">Fiado de hoy</div>
+<div class="s183">S/ 184.50</div>
+<div class="s184"><span>Sra. Rosa</span><span>S/ 32.00</span></div>
+<div class="s185"><span>Don Julio</span><span>S/ 18.50</span></div>
+<div class="s186"><span>Vecino 14</span><span>S/ 9.00</span></div>
+<div class="s187"><span class="s188"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14161B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><line x1="12" y1="18" x2="12" y2="21"></line></svg></span></div>
+</div>
+</div>
+<div class="s078">DEMO · HACKATHON SOLANA</div>
+<h3 class="s079">AylluSol</h3>
+<p class="s041"><strong>Desafío:</strong> las bodegas registran el crédito en un cuaderno: deudas que se olvidan y cobros que no llegan.</p>
+<p class="s041"><strong>Solución:</strong> registro digital con entrada por voz, pagos aplicados a la deuda más antigua y prueba diaria sellada en Solana.</p>
+<p class="s041"><strong>Contexto:</strong> proyecto para la hackathon Colosseum Crypto World’s Fair, con una demo que utiliza datos ficticios y Solana devnet.</p>
+<div class="s160"><a href="https://lcarrenoy.github.io/ayllusol" target="_blank" rel="noopener">Ver aplicación</a><a href="https://github.com/lcarrenoy/ayllusol" target="_blank" rel="noopener">Ver repositorio</a></div>
+</article>
+</div>
+
+<div class="s189">
+<span class="s190">Tecnologías:</span>
+<span class="s191">Python</span>
+<span class="s191">FastAPI</span>
+<span class="s191">LangGraph</span>
+<span class="s191">Claude API</span>
+<span class="s191">PostgreSQL</span>
+<span class="s191">Power BI</span>
+<span class="s191">Google Cloud</span>
+<span class="s191">AWS</span>
+<span class="s191">Azure</span>
+</div>
+</div>
+</section>
+
+<section id="nosotros" class="s018">
+<p class="s019">Equipo</p>
+<h2 class="s072">Ingeniería con criterio de negocio.</h2>
+<p class="s192">Planet STEAM Labs nace de construir y operar una plataforma propia con IA. Aplicamos la misma tecnología y disciplina a los procesos de cada cliente, con foco en resultados medibles.</p>
+<div class="s134">
+<article class="s193">
+<div aria-hidden="true" class="s194">LC</div>
+<div class="s195">Luis Alberto Carreño</div>
+<div class="s196">Fundador · Founding AI Engineer</div>
+<p class="s041">Ingeniero Industrial (UNI) con más de 8 años en finanzas, supply chain y operaciones, incluida una startup de Y Combinator. Lidera la estrategia y la arquitectura de IA.</p>
+<a href="https://www.linkedin.com/in/luis-alberto-carre%C3%B1o" target="_blank" rel="noopener" class="s197">Conocer al fundador →</a>
+</article>
+
+
+</div>
+</section>
+
+<section id="contacto" class="s002">
+<div class="s202">
+<div class="s203">
+<div class="s204">
+<h2 class="s205">Evaluemos qué procesos puede optimizar la IA.</h2>
+<p class="s206">Una sesión de diagnóstico de 20 minutos para identificar oportunidades concretas de automatización y su impacto esperado.</p>
+<a href="mailto:admin@planetsteam.app" class="s207">Agendar una reunión</a>
+
+<p class="s209">admin@planetsteam.app</p>
+<div class="s210"><a href="https://www.linkedin.com/in/luis-alberto-carre%C3%B1o" target="_blank" rel="noopener" class="s211">LinkedIn</a><a href="https://github.com/lcarrenoy" target="_blank" rel="noopener" class="s211">GitHub</a></div>
+</div>
+<form action="mailto:admin@planetsteam.app" method="post" enctype="text/plain" class="s212">
+<div class="s195">Solicitar diagnóstico</div>
+<div class="s213">
+<label class="s214">Nombre<input name="nombre" type="text" autocomplete="name" class="s215"></label>
+<label class="s214">Empresa<input name="empresa" type="text" autocomplete="organization" class="s215"></label>
+<label class="s214">Cargo<input name="cargo" type="text" autocomplete="organization-title" class="s215"></label>
+<label class="s214">Correo<input name="correo" type="email" autocomplete="email" class="s215"></label>
+</div>
+<label class="s214">¿Qué proceso quiere mejorar?<textarea name="proceso" rows="4" class="s216"></textarea></label>
+<button type="submit" class="s217">Preparar correo</button>
+<p class="form-note">Se abrirá su aplicación de correo con la solicitud preparada. Revise el mensaje antes de enviarlo. No incluya datos sensibles.</p>
+</form>
+</div>
+<footer class="s218">
+<span>© 2023 – 2026 Planet STEAM Labs · Lima, Perú</span>
+<span class="s219"><a href="https://planetsteam.app" target="_blank" rel="noopener" class="s220">planetsteam.app</a><a href="https://lcarrenoy.github.io/webpage/" class="s220">Portafolio profesional</a></span>
+</footer>
+</div>
+</section>
+
+</div>
+<script>
+/* Planet STEAM Labs — interacciones
+   1) Buscador y filtros del catálogo (Quick / Business, especialización, texto)
+   2) Botones "Solicitar cotización / información" que precargan el formulario
+   3) Envío del formulario mediante el cliente de correo (mailto) */
+(function () {
+  'use strict';
+
+  var CONTACT_EMAIL = 'admin@planetsteam.app';
+
+  function norm(t) {
+    return (t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+
+  /* ---------- 1. Catálogo ---------- */
+  var search = document.getElementById('cat-search');
+  var typeSel = document.getElementById('cat-type');
+  var specSel = document.getElementById('cat-spec');
+  var reset = document.getElementById('cat-reset');
+  var count = document.getElementById('cat-count');
+  var empty = document.getElementById('cat-empty');
+  var quick = document.getElementById('quick');
+  var business = document.getElementById('business');
+
+  var cards = Array.prototype.slice.call(
+    document.querySelectorAll('#quick article[id], #business article[id]')
+  ).map(function (el) {
+    var spans = el.querySelectorAll('div span');
+    // Unir los nodos de texto con espacios (textContent los pega sin separación)
+    var parts = [], walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), n;
+    while ((n = walker.nextNode())) parts.push(n.nodeValue);
+    var full = norm(parts.join(' '));
+    return {
+      el: el,
+      type: el.id.charAt(0) === 'q' ? 'quick' : 'business',
+      spec: spans.length > 1 ? spans[1].textContent.trim() : '',
+      text: full,
+      words: full.split(/[^a-z0-9ñ]+/).filter(Boolean)
+    };
+  });
+  var total = cards.length;
+
+  function applyFilters() {
+    var q = norm(search.value.trim());
+    var terms = q ? q.split(/\s+/) : [];
+    var type = typeSel.value;
+    var spec = specSel.value;
+    var shown = 0;
+
+    cards.forEach(function (c) {
+      var ok = (type === 'all' || c.type === type) &&
+               (spec === 'all' || c.spec === spec) &&
+               terms.every(function (t) { return c.words.some(function (w) { return w.indexOf(t) === 0; }); });
+      c.el.hidden = !ok;
+      if (ok) shown++;
+    });
+
+    // Ocultar grupos de especialización vacíos
+    document.querySelectorAll('[id^="quick-"], [id^="business-"]').forEach(function (g) {
+      if (!g.querySelector('article')) return;
+      g.hidden = !g.querySelector('article:not([hidden])');
+    });
+
+    // Ocultar el bloque Business completo si no tiene resultados
+    var bizVisible = cards.some(function (c) { return c.type === 'business' && !c.el.hidden; });
+    var quickVisible = cards.some(function (c) { return c.type === 'quick' && !c.el.hidden; });
+    business.hidden = !bizVisible;
+    quick.hidden = !quickVisible;
+
+    count.textContent = 'Mostrando ' + shown + ' de ' + total + ' ofertas';
+    empty.hidden = shown !== 0;
+  }
+
+  if (search && typeSel && specSel) {
+    search.addEventListener('input', applyFilters);
+    typeSel.addEventListener('change', applyFilters);
+    specSel.addEventListener('change', applyFilters);
+    reset.addEventListener('click', function () {
+      search.value = ''; typeSel.value = 'all'; specSel.value = 'all';
+      applyFilters(); search.focus();
+    });
+  }
+
+  // Los botones de especialización también filtran
+  document.querySelectorAll('nav[aria-label="Especializaciones"] a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var id = a.getAttribute('href').slice(1);
+      if (search) {
+        search.value = '';
+        typeSel.value = id.indexOf('quick') === 0 ? 'quick' : 'business';
+        specSel.value = 'all';
+        applyFilters();
+      }
+    });
+  });
+
+  // Al llegar desde un enlace a una ficha (#c01, #q07…), resaltarla y abrirla
+  function focusTarget() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (!/^[qc]\d\d$/.test(id)) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (el.hidden && reset) reset.click();
+    var d = el.querySelector('details');
+    if (d) d.open = true;
+    el.classList.add('is-highlight');
+    setTimeout(function () { el.classList.remove('is-highlight'); }, 2200);
+  }
+  window.addEventListener('hashchange', focusTarget);
+  focusTarget();
+
+  /* ---------- 2. Precargar el formulario ---------- */
+  var form = document.querySelector('#contacto form');
+  var message = form ? form.querySelector('textarea[name="proceso"]') : null;
+
+  document.querySelectorAll('a[aria-label^="Solicitar"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var label = a.getAttribute('aria-label').split(': ')[1] || '';
+      if (message && label) {
+        message.value = 'Me interesa: ' + label + '.\n' +
+          (message.value.indexOf('Me interesa:') === 0 ? '' : message.value);
+        setTimeout(function () { message.focus({ preventScroll: true }); }, 600);
+      }
+    });
+  });
+
+  /* ---------- 3. Enviar por correo ---------- */
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = new FormData(form);
+      var correo = (f.get('correo') || '').trim();
+      if (correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+        form.querySelector('[name="correo"]').focus();
+        return;
+      }
+      var subject = 'Solicitud de diagnóstico' + (f.get('empresa') ? ' — ' + f.get('empresa') : '');
+      var body = [
+        'Nombre: ' + (f.get('nombre') || ''),
+        'Empresa: ' + (f.get('empresa') || ''),
+        'Cargo: ' + (f.get('cargo') || ''),
+        'Correo: ' + correo,
+        '',
+        (f.get('proceso') || '')
+      ].join('\n');
+      window.location.href = 'mailto:' + CONTACT_EMAIL +
+        '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+})();
+</script>
+</body>
+</html>
